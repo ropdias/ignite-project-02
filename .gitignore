@@ -15,3 +15,6 @@
 
 # data
 /data
+
+#db
+/db/app.db
