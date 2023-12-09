@@ -1,19 +1,22 @@
 import fastify from 'fastify';
 import { knex } from './database';
+import { env } from './env';
 
 const app = fastify();
 
 // GET, POST, PUT, PATCH, DELETE
 
 app.get('/hello', async () => {
-  const tables = await knex('sqlite_schema').select('*');
+  const transaction = await knex('transactions')
+    .where('amount', 1000)
+    .select('*');
 
-  return tables;
+  return transaction;
 });
 
 app
   .listen({
-    port: 3333,
+    port: env.PORT,
   })
   .then(() => {
     console.log('HTTP Server Running!');
