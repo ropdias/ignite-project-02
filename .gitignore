@@ -9,6 +9,7 @@
 
 # env
 .env
+.env.test
 
 # images
 /images
@@ -18,3 +19,4 @@
 
 #db
 /db/app.db
+/db/test.db
