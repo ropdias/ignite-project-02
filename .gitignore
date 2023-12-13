@@ -18,5 +18,4 @@
 /data
 
 #db
-/db/app.db
-/db/test.db
+/db/*.db
